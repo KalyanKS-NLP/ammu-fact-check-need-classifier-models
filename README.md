@@ -10,6 +10,10 @@
 
 **Ammu-1.0-FactCheck** is a family of lightweight fact check need classification models which can detect whether incoming user queries require factual grounding (**`FACT_CHECK_NEEDED`**) or can be processed directly without external retrieval (**`NO_FACT_CHECK_NEEDED`**).
 
+<p align="center">
+  <img src="assets/Ammu-1.0-Fact-Check-Benchmark.png" alt="Ammu-1.0 Fact Check Benchmark" width="1000"/>
+</p>
+
 Built on the modern **ModernBERT** encoder architecture, the model family scales from **17M down to 150M parameters** (`base` 150M, `small` 68M, `tiny` 33M, and `nano` 17M) and outperforming Vela 1.0 Fact Check model (307M) model by  more than **25 Macro F1 points**. 
 
 These models can be used an upfront guardrail that directs queries to retrieval-augmented generation (RAG) pipelines or web search engines only when factual grounding is genuinely needed.
@@ -157,10 +161,10 @@ An interactive Gradio application is included in [`app.py`](./app.py) featuring:
 
 To run locally:
 ```bash
-git clone https://github.com/<your-username>/ammu-fact-check-need-classifier.git
-cd ammu-fact-check-need-classifier
-pip install -r requirements.txt
-python app.py
+git clone https://github.com/KalyanKS-NLP/ammu-fact-check-need-classifier-models.git
+cd ammu-fact-check-need-classifier-models
+pip install -r assets/requirements.txt
+python assets/app.py
 ```
 
 ---
@@ -168,7 +172,7 @@ python app.py
 ## 🔬 Reproducing the Benchmark
 
 You can reproduce the evaluation benchmarks against the holdout test set using the standalone notebook:
-- [`FactCheck - Model Eval and Comparison.ipynb`](./FactCheck%20-%20Model%20Eval%20and%20Comparison.ipynb)
+- [`FactCheck - Model Eval and Comparison.ipynb`](./assets/FactCheck%20-%20Model%20Eval%20and%20Comparison.ipynb)
 
 This downloads the public test set from Hugging Face Datasets and runs deterministic evaluation against all model variants.
 
@@ -178,10 +182,10 @@ This downloads the public test set from Hugging Face Datasets and runs determini
 
 | Model | Hugging Face Hub ID | Parameters | Recommended Use Case |
 |---|---|:---:|---|
-| **Base** | [`kalyan-ks/Ammu-1.0-FactCheck-base`](https://huggingface.co/kalyan-ks/Ammu-1.0-FactCheck-Need-base) | 150M | Flagship accuracy, server-side batch routing |
-| **Small** | [`kalyan-ks/Ammu-1.0-FactCheck-small`](https://huggingface.co/kalyan-ks/Ammu-1.0-FactCheck-Need-small) | 68M | High throughput cloud microservices |
-| **Tiny** | [`kalyan-ks/Ammu-1.0-FactCheck-tiny`](https://huggingface.co/kalyan-ks/Ammu-1.0-FactCheck-Need-tiny) | 33M | CPU inference & low-cost serverless containers |
-| **Nano** | [`kalyan-ks/Ammu-1.0-FactCheck-nano`](https://huggingface.co/kalyan-ks/Ammu-1.0-FactCheck-Need-nano) | 17M | Ultra-low latency edge devices & browser extensions |
+| **Base** | [`kalyan-ks/Ammu-1.0-FactCheck-Need-base`](https://huggingface.co/kalyan-ks/Ammu-1.0-FactCheck-Need-base) | 150M | Flagship accuracy, server-side batch routing |
+| **Small** | [`kalyan-ks/Ammu-1.0-FactCheck-Need-small`](https://huggingface.co/kalyan-ks/Ammu-1.0-FactCheck-Need-small) | 68M | High throughput cloud microservices |
+| **Tiny** | [`kalyan-ks/Ammu-1.0-FactCheck-Need-tiny`](https://huggingface.co/kalyan-ks/Ammu-1.0-FactCheck-Need-tiny) | 33M | CPU inference & low-cost serverless containers |
+| **Nano** | [`kalyan-ks/Ammu-1.0-FactCheck-Need-nano`](https://huggingface.co/kalyan-ks/Ammu-1.0-FactCheck-Need-nano) | 17M | Ultra-low latency edge devices & browser extensions |
 
 ---
 
@@ -192,7 +196,7 @@ This project is licensed under the [MIT License](LICENSE).
 ```bibtex
 @misc{ammu2026factcheckneed,
   author = {Kalyan KS},
-  title = {Ammu-1.0-FactCheck-Need: Ultra-Lightweight Fact Check Need Classification Models},
+  title = {Ammu-1.0-FactCheck-Need: Ultra-Lightweight Fact Check Need Classifier Models},
   year = {2026},
   publisher = {Hugging Face},
   howpublished = {\url{https://huggingface.co/collections/kalyan-ks/ammu-10-factcheck-needed}}
