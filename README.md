@@ -154,7 +154,7 @@ The benchmark explicitly tests and overcomes shallow lexical shortcuts:
 
 ## 💻 Interactive Gradio Demo
 
-An interactive Gradio application is included in [`app.py`](./app.py) featuring:
+An interactive Gradio application is included in [`app.py`](./assets/app.py) featuring:
 - Real-time classification with confidence breakdown.
 - Model switching between all 4 parameter scales (`base`, `small`, `tiny`, `nano`).
 - ZeroGPU compatibility for Hugging Face Spaces.
