@@ -60,7 +60,7 @@ Evaluated on a test set of of **4,214 balanced instances** across three difficul
 **Note** - * - Tiny and Nano models are trained using knowledge distillation with Ammu-1.0-FactCheck-Need-base as the teacher model. 
 
 ### Key Highlights
- Achieves a 96.56% overall Macro-F1 score  outperforming the 307M parameter baseline by more than +27% Macro-F1 points.
+- Achieves a 96.56% overall Macro-F1 score  outperforming the 307M parameter baseline by more than +27% Macro-F1 points.
 - Ammu-1.0-FactCheck-Need models are built upon ModernBERT architecture with 150M (base), 68M (small), 32M (tiny) and 17M (nano) sizes.
 -  Trained on balanced synthetic data spanning 120 granular topics, 19 prompt interaction formats, and 29 user personas.
 -  Tiny and Nano models are trained using knowledge distillation with Ammu-1.0-FactCheck-Need-base as the teacher model. 
