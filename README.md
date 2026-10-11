@@ -133,7 +133,7 @@ The models are trained and benchmarked on the **[kalyan-ks/fact-check-need-class
 
 ### 1. 8-Dimensional Seed Taxonomy (241 Leaf Nodes)
 The dataset samples across 8 distinct dimensions:
-- *3 Domain Groups**: `FACT_CHECK_NEEDED` (50%), `NO_FACT_CHECK_INPUT_TEXT` (25%), `NO_FACT_CHECK_GENERATIVE` (25%).
+- **3 Domain Groups**: `FACT_CHECK_NEEDED` (50%), `NO_FACT_CHECK_INPUT_TEXT` (25%), `NO_FACT_CHECK_GENERATIVE` (25%).
 - **Topics & Subtopics**: 17 parent domains across 120 subtopics (finance, medicine, history, law, coding, creative, math, etc.).
 - **User Personas**: 29 personas across 4 expertise tiers (Novice, Intermediate, Knowledgeable, Expert).
 - **Linguistic Registers & Tones**: 8 registers (casual, technical, academic, slang) and 9 emotional tones.
