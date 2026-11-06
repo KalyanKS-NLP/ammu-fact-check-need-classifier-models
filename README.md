@@ -68,6 +68,21 @@ Post-training quantized (PTQ) INT8 models optimized for low-latency CPU serving 
 | **[Ammu-1.0-FactCheck-Need-base-ONNX-INT8](https://huggingface.co/kalyan-ks/Ammu-1.0-FactCheck-Need-base-ONNX-INT8)** | 150M | Dynamic INT8 + Sensitive Layers & Head FP32 | **284.7 MB** | 35.73 ms | 14.7 q/s | 98.79 | 95.14 | 93.35 | **95.13** |
 | **[Ammu-1.0-FactCheck-Need-tiny-ONNX-INT8](https://huggingface.co/kalyan-ks/Ammu-1.0-FactCheck-Need-tiny-ONNX-INT8)** | 32M | Dynamic INT8 + Sensitive Layers & Head FP32 | **90.3 MB** | **9.41 ms** | **89.4 q/s** | 98.79 | 95.79 | 93.47 | **95.44** | 
 
+### 🚀 High-Throughput GPU Models (FP16 & FP8 on NVIDIA L4)
+
+GPU-accelerated models optimized with kernel fusion via `torch.compile` (benchmarked on an NVIDIA Ada Lovelace L4 GPU with batch size = 32 and `max_length=128`):
+
+| Model | Parameters | Precision / Method | Model Size | P50 Latency (batch=1) | Throughput (batch=32) | Easy F1 (%) | Medium F1 (%) | Hard F1 (%) | Overall Macro-F1 (%) |
+|:---|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Ammu-1.0-FactCheck-Need-base** | 150M | FP16 (Compiled) | 285.35 MB | 7.50 ms | 796.4 q/s | 98.91 | 96.74 | 95.23 | **96.56** |
+| **Ammu-1.0-FactCheck-Need-base** | 150M | FP8 E4M3 (Compiled) | **142.68 MB** | 11.42 ms | **913.3 q/s** | 98.79 | 96.68 | 95.00 | **96.42** |
+| **Ammu-1.0-FactCheck-Need-small** | 68M | FP16 (Compiled) | 130.48 MB | 6.36 ms | 1,200.4 q/s | 98.55 | 95.97 | 95.11 | **96.13** |
+| **Ammu-1.0-FactCheck-Need-small** | 68M | FP8 E4M3 (Compiled) | **65.24 MB** | 10.18 ms | **1,124.5 q/s** | 98.91 | 96.21 | 95.23 | **96.34** |
+| **Ammu-1.0-FactCheck-Need-tiny** | 32M | FP16 (Compiled) | 61.10 MB | 4.18 ms | 1,572.2 q/s | 99.27 | 96.33 | 94.88 | **96.32** |
+| **Ammu-1.0-FactCheck-Need-tiny** | 32M | FP8 E4M3 (Compiled) | **30.55 MB** | 5.93 ms | **1,357.6 q/s** | 99.27 | 96.15 | 95.06 | **96.32** |
+| **Ammu-1.0-FactCheck-Need-nano** | 17M | FP16 (Compiled) | 32.17 MB | **3.09 ms** | **1,813.8 q/s** | 98.91 | 95.56 | 94.23 | **95.68** |
+| **Ammu-1.0-FactCheck-Need-nano** | 17M | FP8 E4M3 (Compiled) | **16.08 MB** | 4.55 ms | **1,473.7 q/s** | 98.67 | 95.38 | 94.06 | **95.49** | 
+
 ### Key Highlights
 - Achieves a 96.56% overall Macro-F1 score  outperforming the 307M parameter baseline by more than +27% Macro-F1 points.
 - Ammu-1.0-FactCheck-Need models are built upon ModernBERT architecture with 150M (base), 68M (small), 32M (tiny) and 17M (nano) sizes.
