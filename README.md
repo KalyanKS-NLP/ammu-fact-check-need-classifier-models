@@ -59,6 +59,15 @@ Evaluated on a test set of of **4,214 balanced instances** across three difficul
 
 **Note** - * - Tiny and Nano models are trained using knowledge distillation with Ammu-1.0-FactCheck-Need-base as the teacher model. 
 
+### ⚡ Quantized ONNX INT8 Models (CPU Inference)
+
+Post-training quantized (PTQ) INT8 models optimized for low-latency CPU serving via Microsoft ONNX Runtime and Hugging Face Optimum:
+
+| Model | Parameters | Quantization Recipe | Model Size | P50 Latency (CPU) | Throughput | Easy F1 (%) | Medium F1 (%) | Hard F1 (%) | Overall Macro-F1 (%) |
+|:---|:---:|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **[Ammu-1.0-FactCheck-Need-base-ONNX-INT8](https://huggingface.co/kalyan-ks/Ammu-1.0-FactCheck-Need-base-ONNX-INT8)** | 150M | Dynamic INT8 + Sensitive Layers & Head FP32 | **284.7 MB** | 35.73 ms | 14.7 q/s | 98.79 | 95.14 | 93.35 | **95.13** |
+| **[Ammu-1.0-FactCheck-Need-tiny-ONNX-INT8](https://huggingface.co/kalyan-ks/Ammu-1.0-FactCheck-Need-tiny-ONNX-INT8)** | 32M | Dynamic INT8 + Sensitive Layers & Head FP32 | **90.3 MB** | **9.41 ms** | **89.4 q/s** | 98.79 | 95.79 | 93.47 | **95.44** | 
+
 ### Key Highlights
 - Achieves a 96.56% overall Macro-F1 score  outperforming the 307M parameter baseline by more than +27% Macro-F1 points.
 - Ammu-1.0-FactCheck-Need models are built upon ModernBERT architecture with 150M (base), 68M (small), 32M (tiny) and 17M (nano) sizes.
