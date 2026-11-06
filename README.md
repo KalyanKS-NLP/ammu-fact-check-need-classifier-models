@@ -59,6 +59,14 @@ Evaluated on a test set of of **4,214 balanced instances** across three difficul
 
 **Note** - * - Tiny and Nano models are trained using knowledge distillation with Ammu-1.0-FactCheck-Need-base as the teacher model. 
 
+### Key Highlights
+- Achieves a 96.56% overall Macro-F1 score  outperforming the 307M parameter baseline by more than +27% Macro-F1 points.
+- Ammu-1.0-FactCheck-Need models are built upon ModernBERT architecture with 150M (base), 68M (small), 32M (tiny) and 17M (nano) sizes.
+-  Trained on balanced synthetic data spanning 120 granular topics, 19 prompt interaction formats, and 29 user personas.
+-  Tiny and Nano models are trained using knowledge distillation with Ammu-1.0-FactCheck-Need-base as the teacher model. 
+-  Models run on CPU with high throughput and low latency.
+-  MIT licensed and ready for real world use.
+
 ### ⚡ Quantized ONNX INT8 Models (CPU Inference)
 
 Post-training quantized (PTQ) INT8 models optimized for low-latency CPU serving via Microsoft ONNX Runtime and Hugging Face Optimum:
@@ -82,14 +90,6 @@ GPU-accelerated models optimized with kernel fusion via `torch.compile` (benchma
 | **Ammu-1.0-FactCheck-Need-tiny** | 32M | FP8 E4M3 (Compiled) | **30.55 MB** | 5.93 ms | **1,357.6 q/s** | 99.27 | 96.15 | 95.06 | **96.32** |
 | **Ammu-1.0-FactCheck-Need-nano** | 17M | FP16 (Compiled) | 32.17 MB | **3.09 ms** | **1,813.8 q/s** | 98.91 | 95.56 | 94.23 | **95.68** |
 | **Ammu-1.0-FactCheck-Need-nano** | 17M | FP8 E4M3 (Compiled) | **16.08 MB** | 4.55 ms | **1,473.7 q/s** | 98.67 | 95.38 | 94.06 | **95.49** | 
-
-### Key Highlights
-- Achieves a 96.56% overall Macro-F1 score  outperforming the 307M parameter baseline by more than +27% Macro-F1 points.
-- Ammu-1.0-FactCheck-Need models are built upon ModernBERT architecture with 150M (base), 68M (small), 32M (tiny) and 17M (nano) sizes.
--  Trained on balanced synthetic data spanning 120 granular topics, 19 prompt interaction formats, and 29 user personas.
--  Tiny and Nano models are trained using knowledge distillation with Ammu-1.0-FactCheck-Need-base as the teacher model. 
--  Models run on CPU with high throughput and low latency.
--  MIT licensed and ready for real world use.
 
 ---
 
